@@ -55,3 +55,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'bootstrap'
+gem 'sprockets', '~> 3.7.2'

@@ -12,7 +12,6 @@
       <h3>Answer</h3>
       <table class ="table table-striped">
         <%if @question.answers.any? %>
-        
         <thead class="thead-light">
           <tr>
             <td></td>
@@ -25,16 +24,13 @@
           <tr>
             <td><%= answer.content %></td>
             <td><%= answer.name %></td>
-            <td>[edit][delete]</td>
+            <td>[<%= link_to "edit", edit_question_answer_path(@question,answer) %>][<%= link_to "delete", question_answer_path(@question,answer), method: :delete, data:{ confirm: "マジで削除するん？"}%>]</td>
           </tr>
           <% end %>
         </tbody>
         <% else %>
           <p>No answer yer</p>
         <% end %>
-
-
-
       </table>
     </div>
 

@@ -1,8 +1,8 @@
-
+m
 <h2>QUESTIONS</h2>
 
 <div class ="row">
-  
+
   <div class ="col-md-12">
     <table class = "table table-striped">
       <thead class="thead-light">
@@ -16,16 +16,16 @@
       <% @questions.each do |question| %>
         <tr>
           <td><%= question.id %></td>
-          <td><%= question.name %></td>
-          <td>[edit] [delete]</td>
+          <td><%= link_to question.title, question_path(question)%></td>
+          <td>[<%= link_to 'Edit', edit_question_path(question) %>] 
+          [[<%= link_to 'Deleat', question_path(question),method: :delete, data:{confirm: "Are you Oke?"} %>]]</td>
         </tr>
       <% end %>
-      
       </tbody>
     </table>
-
-    
-
+    <div>
+      <%=link_to "New Questions", new_question_path %>
+    </div>
   </div>
 
 
